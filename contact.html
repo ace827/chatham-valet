@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your Reservation — Chatham Valet</title>
+<link rel="stylesheet" href="cv-shared.css">
+<style>
+.contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:72px; align-items:start; max-width:1100px; margin:0 auto; }
+.contact-info h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,3.5vw,44px); color:var(--white); font-weight:400; margin-bottom:18px; line-height:1.15; }
+.contact-info h2 em { font-style:italic; color:var(--gold2); }
+.contact-info p { font-size:14px; color:rgba(255,255,255,0.58); line-height:1.75; margin-bottom:32px; font-weight:300; }
+.contact-detail-list { list-style:none; display:flex; flex-direction:column; gap:18px; margin-bottom:36px; }
+.contact-detail-list li { display:flex; align-items:flex-start; gap:14px; font-size:14px; color:rgba(255,255,255,0.72); line-height:1.5; }
+.contact-detail-list svg { width:16px; height:16px; color:var(--gold); flex-shrink:0; margin-top:2px; }
+.contact-detail-list a { color:var(--gold); text-decoration:none; }
+.contact-detail-list a:hover { opacity:0.8; }
+.service-links { list-style:none; display:flex; flex-direction:column; gap:0; border-top:1px solid rgba(255,255,255,0.08); }
+.service-links li a {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0; font-size:13px; color:rgba(255,255,255,0.55);
+  text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.08);
+  transition:color 0.2s;
+}
+.service-links li a:hover { color:var(--gold); }
+.service-links li a svg { width:13px; height:13px; color:var(--gold); opacity:0; transition:opacity 0.2s; }
+.service-links li a:hover svg { opacity:1; }
+@media(max-width:1024px){ .contact-grid{grid-template-columns:1fr;gap:48px;} }
+</style>
+</head>
+<body data-page="contact">
+<script src="cv-shared.js"></script>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+</svg>
+
+<!-- PAGE HERO (short) -->
+<div class="page-hero" style="padding-top:108px;height:300px">
+  <div class="page-hero-img">
+    <img src="https://assets.cdn.filesafe.space/NIZ8oew6UGdymnCIXEDN/media/693489a21d466e6ea1130a98.webp" alt="Contact Chatham Valet">
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-eyebrow">Get in Touch</div>
+    <h1 class="page-hero-title">Start Your <em>Reservation</em></h1>
+  </div>
+</div>
+
+<!-- CONTACT BODY -->
+<section class="section section-navy" style="padding-top:80px;padding-bottom:100px">
+  <div class="contact-grid">
+
+    <!-- LEFT: INFO -->
+    <div class="reveal">
+      <h2>Let's Plan Your <em>Transportation</em></h2>
+      <p>Tell us about your date, service type, and needs. Our team reviews every inquiry and responds with availability and a tailored proposal. Peak-season dates fill quickly — don't wait.</p>
+      <ul class="contact-detail-list">
+        <li>
+          <svg><use href="#i-phone"/></svg>
+          <div><a href="tel:5082404913">508-240-4913</a><br><span style="font-size:12px;color:rgba(255,255,255,0.38)">Call or text anytime</span></div>
+        </li>
+        <li>
+          <svg><use href="#i-mail"/></svg>
+          <div><a href="mailto:sales@chathamvalet.com">sales@chathamvalet.com</a></div>
+        </li>
+        <li>
+          <svg><use href="#i-pin"/></svg>
+          <div>Chatham, Cape Cod, Massachusetts<br><span style="font-size:12px;color:rgba(255,255,255,0.38)">Serving all of Cape Cod & New England</span></div>
+        </li>
+        <li>
+          <svg><use href="#i-clock"/></svg>
+          <div>Available Year-Round<br><span style="font-size:12px;color:rgba(255,255,255,0.38)">Including winter service to Boston Logan</span></div>
+        </li>
+      </ul>
+
+      <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,169,110,0.6);margin-bottom:10px">Our Services</div>
+      <ul class="service-links">
+        <li><a href="weddings.html">Weddings & Private Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
+        <li><a href="airport.html">Airport Transfers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
+        <li><a href="valet.html">Valet & Parking Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
+        <li><a href="party-buses.html">Party Buses & Nights Out <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="reveal d1" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:44px 40px">
+      <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Reservation Request</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--white);margin-bottom:28px;font-weight:400">Tell Us About Your Plans</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="First & Last Name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(508) 000-0000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Service Date</label>
+            <input type="text" placeholder="MM/DD/YYYY or approx.">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Service Type *</label>
+            <select required>
+              <option value="">Select a Service</option>
+              <option>Wedding & Private Event Transportation</option>
+              <option>Airport Transfer — From Airport</option>
+              <option>Airport Transfer — To Airport</option>
+              <option>Valet & Parking Management</option>
+              <option>Party Bus — Beachcomber</option>
+              <option>Party Bus — Nantucket</option>
+              <option>Point-to-Point / Hourly Charter</option>
+              <option>Other / Not Sure Yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Guest / Passenger Count</label>
+            <input type="text" placeholder="Approximate number">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pickup Location</label>
+            <input type="text" placeholder="Hotel, address, or venue name">
+          </div>
+          <div class="form-group">
+            <label>Dropoff / Destination</label>
+            <input type="text" placeholder="Venue, airport, or address">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label>Event Details & Special Requests</label>
+            <textarea placeholder="Tell us about your event, timeline, special requirements, or anything else that helps us build the right proposal..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Send Reservation Request</button>
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px;line-height:1.6">We typically respond within one business day. For urgent requests, please call <a href="tel:5082404913" style="color:var(--gold);text-decoration:none">508-240-4913</a>.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY RESERVE EARLY -->
+<section class="section section-cream">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Don't Wait</div>
+      <h2 class="section-title">Peak Season Dates <em>Fill Quickly</em></h2>
+      <p class="section-sub">Cape Cod's summer season is short and popular venues book up fast. Here's what to expect by service:</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto">
+      <div style="border-left:2px solid var(--gold);padding-left:20px" class="reveal d1">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Weddings</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6;font-weight:300">Peak-season dates often reserve 6–18 months ahead. The earlier you reach out, the better your options.</p>
+      </div>
+      <div style="border-left:2px solid var(--gold);padding-left:20px" class="reveal d2">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Airport Transfers</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6;font-weight:300">Summer weekend availability can be limited. Off-season and midweek bookings are more flexible.</p>
+      </div>
+      <div style="border-left:2px solid var(--gold);padding-left:20px" class="reveal d3">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Valet & Events</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6;font-weight:300">Event staffing requires planning time. Reach out at least 4–8 weeks in advance for one-time events.</p>
+      </div>
+      <div style="border-left:2px solid var(--gold);padding-left:20px" class="reveal d4">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Party Buses</div>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6;font-weight:300">Summer weekends go fast. For peak dates, book online or call us as early as possible to lock in your bus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
