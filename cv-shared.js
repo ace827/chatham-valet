@@ -1,4 +1,4 @@
-// Chatham Valet — shared nav/footer injector
+// Chatham Valet - shared nav/footer injector
 // Each page includes this script and it injects the nav and footer.
 
 const CV_NAV = `
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.handleSubmit = function(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
-    btn.textContent = "Request Sent — We'll Be in Touch!";
+    btn.textContent = "Request Sent - We'll Be in Touch!";
     btn.style.background = 'var(--gold3)';
     btn.disabled = true;
     setTimeout(() => {
