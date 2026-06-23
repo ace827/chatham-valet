@@ -11,8 +11,8 @@
   position: relative; height: 100vh; min-height: 680px;
   display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
-.hero-video-wrap { position: absolute; inset: 0; }
-.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; }
+.hero-video-wrap { position: absolute; inset: 0; overflow: hidden; }
+.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(11,21,38,0.48) 0%, rgba(11,21,38,0.35) 40%, rgba(11,21,38,0.68) 100%);
@@ -31,7 +31,7 @@
 @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 
 /* brand strip */
-.brand-strip { background: var(--navy); padding: 26px 48px; display: flex; align-items: center; justify-content: center; gap: 56px; flex-wrap: wrap; }
+.brand-strip { background: var(--navy); padding: 22px 32px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
 .bs-item { display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .bs-num { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--gold); line-height: 1; }
 .bs-label { font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
@@ -39,6 +39,17 @@
 
 /* services preview grid */
 .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--border); max-width: 1180px; margin: 0 auto; }
+@media (max-width: 768px) {
+  .brand-strip { gap: 20px; padding: 18px 16px; }
+  .bs-divider { display: none; }
+  .bs-num { font-size: 26px !important; padding-top: 0 !important; }
+  .services-grid { grid-template-columns: 1fr; }
+  .svc-card-img { height: 200px; }
+  .hero-title { font-size: clamp(38px, 10vw, 64px); }
+  .hero-sub { font-size: 14px; }
+  .hero-btns { gap: 10px; }
+  .hero-btns .btn { padding: 12px 22px; font-size: 11px; }
+}
 .svc-card { background: var(--white); overflow: hidden; display: flex; flex-direction: column; }
 .svc-card-img { position: relative; height: 260px; overflow: hidden; }
 .svc-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s; display: block; }
