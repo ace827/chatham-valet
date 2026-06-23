@@ -20,9 +20,9 @@
   --border: #e0d8ca;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; max-width: 100%; }
 
 /* ── TOPBAR ── */
 .topbar {
@@ -215,6 +215,7 @@ nav.scrolled .nav-inner { height: 62px; background: transparent; }
 
 /* ── SPLIT LAYOUT ── */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.split > * { min-width: 0; }
 .split-3-2 { grid-template-columns: 3fr 2fr; }
 .split-2-3 { grid-template-columns: 2fr 3fr; }
 .split-img { position: relative; }
@@ -403,6 +404,16 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.05); 
 .d3 { transition-delay: 0.3s; }
 .d4 { transition-delay: 0.4s; }
 
+/* ── NAV LOGO SIZE (slightly larger without changing nav height) ── */
+.nav-logo img { height: 50px; }
+
+/* ── INLINE-GRID UTILITY CLASSES (used in page HTML via class= instead of style=) ── */
+.grid-3  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.grid-4  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.grid-2  { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid-2-narrow { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
+.grid-2-narrow > * { background: var(--navy3); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .section, .section-sm { padding-left: 40px; padding-right: 40px; }
@@ -421,26 +432,110 @@ footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.05); 
   .steps-3 { grid-template-columns: 1fr; gap: 36px; }
   .nav-inner { padding: 0 24px; }
   .topbar { padding: 8px 24px; }
+  .grid-3 { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-4 { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
+
 @media (max-width: 768px) {
+  /* Prevent any horizontal overflow */
+  html, body { overflow-x: hidden; max-width: 100%; }
+  * { max-width: 100%; }
+  img { max-width: 100%; height: auto; }
+
+  /* Nav */
   .topbar { display: none; }
-  .section, .section-sm { padding: 56px 24px; }
-  .page-hero { height: 340px; }
-  .page-hero-content { padding: 0 24px 40px; }
-  .quote-band { height: auto; padding: 64px 0; }
-  .quote-band-content { padding: 0 24px; }
-  .cta-band { padding: 52px 24px; }
-  footer { padding: 52px 24px 28px; }
-  .footer-top { grid-template-columns: 1fr; gap: 28px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 12px 0; }
+  .nav-inner { padding: 0 16px; }
+  .nav-logo img { height: 42px; } /* slightly smaller on mobile to fit */
+  .nav-links {
+    display: none; flex-direction: column; gap: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--navy); padding: 12px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
-  .nav-links a { display: block; padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
-  .nav-links a.nav-cta { margin: 12px 24px; padding: 13px 24px; text-align: center; }
+  .nav-links a {
+    display: block; padding: 14px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px;
+  }
+  .nav-links a::after { display: none; }
+  .nav-links a.nav-cta { margin: 12px 20px; padding: 13px 20px; text-align: center; }
   .nav-hamburger { display: flex; }
   .tb-hide-sm { display: none; }
   .tb-tagline { display: none; }
+
+  /* Sections */
+  .section, .section-sm { padding: 52px 20px; }
+
+  /* Page hero */
+  .page-hero { height: auto; min-height: 280px; padding-top: 62px !important; }
+  .page-hero-content { padding: 0 20px 36px; }
+  .page-hero-title { font-size: clamp(28px, 8vw, 44px); }
+  .page-hero-sub { font-size: 14px; margin-top: 10px; }
+
+  /* Quote band */
+  .quote-band { height: auto; padding: 56px 0; }
+  .quote-band-content { padding: 0 20px; max-width: 100%; }
+  .quote-band-overlay {
+    background: linear-gradient(to bottom, rgba(11,21,38,0.75) 0%, rgba(11,21,38,0.75) 100%);
+  }
+
+  /* CTA band */
+  .cta-band { padding: 48px 20px; }
+  .cta-phone { font-size: 32px; }
+
+  /* Splits */
+  .split, .split-3-2, .split-2-3 { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .split-img { order: -1; }
+  .split-img img { height: 240px; width: 100%; object-fit: cover; }
+  .split-img-badge { right: 0; bottom: 0; width: 90px; height: 90px; }
+  .split-img-badge .big { font-size: 24px; }
+
+  /* Grids */
+  .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
+  .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .grid-2-narrow { grid-template-columns: 1fr !important; background: none !important; gap: 2px !important; }
+
+  /* Steps */
+  .steps-3, .steps-4 { grid-template-columns: 1fr !important; gap: 32px; }
+  .steps-3::before, .steps-4::before { display: none; }
+  .step { padding: 0 0; }
+
+  /* Icon boxes in a grid */
+  .icon-box { flex-direction: column; gap: 12px; }
+
+  /* Form */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Footer */
+  footer { padding: 48px 20px 24px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
+  /* Section header */
+  .section-header { margin-bottom: 36px; }
+  .section-header .section-sub { font-size: 14px; }
+
+  /* Buttons */
+  .btn { padding: 13px 24px; font-size: 11px; }
+
+  /* Testimonials / dark cards */
+  .testimonial-card { padding: 22px; }
+
+  /* Bus hero split (party buses page) */
+  .bus-hero-split { grid-template-columns: 1fr !important; }
+  .bus-card { height: 280px; }
+
+  /* Contact page grid */
+  .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+  /* Reveal animations — disable translate so nothing overflows during animation */
+  .reveal, .rl, .rr {
+    opacity: 0;
+    transform: translateY(16px) !important;
+  }
+  .reveal.in, .rl.in, .rr.in {
+    opacity: 1;
+    transform: none !important;
+  }
 }
