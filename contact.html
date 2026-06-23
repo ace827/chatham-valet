@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="cv-shared.css">
 <style>
 .contact-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:72px; align-items:start; max-width:1100px; margin:0 auto; }
+.contact-grid > * { min-width: 0; }
 .contact-info h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,3.5vw,44px); color:var(--white); font-weight:400; margin-bottom:18px; line-height:1.15; }
 .contact-info h2 em { font-style:italic; color:var(--gold2); }
 .contact-info p { font-size:14px; color:rgba(255,255,255,0.58); line-height:1.75; margin-bottom:32px; font-weight:300; }
@@ -164,7 +165,7 @@
       <h2 class="section-title">Peak Season Dates <em>Fill Quickly</em></h2>
       <p class="section-sub">Cape Cod's summer season is short and popular venues book up fast. Here's what to expect by service:</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto">
+    <div class="grid-4" style="max-width:1100px;margin:0 auto">
       <div style="border-left:2px solid var(--gold);padding-left:20px" class="reveal d1">
         <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--navy);margin-bottom:8px">Weddings</div>
         <p style="font-size:13px;color:var(--mid);line-height:1.6;font-weight:300">Peak-season dates often reserve 6–18 months ahead. The earlier you reach out, the better your options.</p>
